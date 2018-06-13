@@ -1,0 +1,30 @@
+body
+{
+	margin:0px !important;
+}
+
+#ball
+{
+	background-color: lightblue;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	transition: .4s ease-in;
+	left: 0px;
+	top: 0px;
+	/*transform: translate3d(1px, 1px, 0);
+	transition: transform .4s ease-in;
+	pointer-events: none;*/
+	/*touch-action: none;*/
+}
+
+#bg
+{
+    height: 400px;
+    background-color: #000;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 50px;
+    position: relative;
+}

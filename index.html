@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Mouse click
+	</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<div id = "bg">
+		<div id="ball"></div>
+	</div>
+	<p id="para"></p>
+	
+	<script>
+		$(document).ready(function(){
+			$("#bg").click(function(){
+		       coordi();
+		    });
+		});
+
+		function coordi()
+		{
+			var bg = document.getElementById('bg');
+			var ball = document.getElementById('ball');
+
+			var x_pos = event.clientX - bg.getBoundingClientRect().left - (ball.clientWidth);
+		    var y_pos = event.clientY - bg.getBoundingClientRect().top - (ball.clientHeight);
+
+		    if(x_pos < 50)
+		    {
+		    	var x_pos = event.clientX - bg.getBoundingClientRect().left;
+		    }
+		    if(y_pos < 50)
+		    {
+		    	var y_pos = event.clientY - bg.getBoundingClientRect().top;
+		    }
+		    document.getElementById("ball").style.left = x_pos+"px";
+		    document.getElementById("ball").style.top = y_pos+"px";
+		   
+		  /*  var parent = $("#bg")
+			var bgWidth = parent.parent().outerWidth(true);
+
+		    var write = document.getElementById("para");
+		    write.innerHTML = x_pos + ' '+ y_pos + ' ' + bgWidth ;*/
+
+
+		    /*var parent = $("#bg")
+			var bgWidth = parent.parent().outerWidth(true);
+			if(x_pos > bgWidth)
+			{
+				var finalX = x_pos - 200;
+			}
+			if(x_pos < 57)
+			{
+				var finalX = x_pos + 200;
+			}
+			if(y_pos < 51)
+			{
+				var finalX = x_pos - 200;
+			}
+			var finalX = x_pos - 100;
+			var finalY = y_pos - 100;
+		    var write = document.getElementById("para");
+		    write.innerHTML = x_pos + ' '+ y_pos + ' : bgwidth' + bgWidth;
+		    var translate3dvalue = "translate3d(" + finalX + "px," + finalY + "px,0)";
+		    bally.style.transform = translate3dvalue;*/
+		}
+	</script>
+</body>
+</html>
